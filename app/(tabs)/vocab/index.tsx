@@ -1,18 +1,12 @@
 import { StyleSheet } from "react-native";
 
-import HomePage from "../../components/HomePage";
-import { Text, View } from "../../components/Themed";
+import { View } from "../../../components/Themed";
+import FlashcardSetList from "../../../components/FlashcardSetList";
 
-export default function Home() {
+export default function Vocab() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <HomePage />
+      <FlashcardSetList />
     </View>
   );
 }

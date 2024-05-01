@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
 
-import HomePage from "../../components/HomePage";
 import { Text, View } from "../../components/Themed";
 
-export default function Home() {
+export default function Reader() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome!</Text>
@@ -12,7 +11,6 @@ export default function Home() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <HomePage />
     </View>
   );
 }

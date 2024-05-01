@@ -1,18 +1,14 @@
 import { StyleSheet } from "react-native";
 
-import HomePage from "../../components/HomePage";
-import { Text, View } from "../../components/Themed";
+import { View } from "../../../components/Themed";
+import FlashcardQuiz from "../../../components/FlashcardQuiz";
+import { useLocalSearchParams } from "expo-router";
 
-export default function Home() {
+export default function flashcardSet(input: string) {
+  const { selectedSet } = useLocalSearchParams();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <HomePage />
+      <FlashcardQuiz setId={selectedSet as string} />
     </View>
   );
 }
