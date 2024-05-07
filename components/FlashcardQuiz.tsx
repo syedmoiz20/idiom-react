@@ -45,12 +45,6 @@ const FlashcardQuiz: React.FunctionComponent<{ setId: string }> = ({
           <Text style={styles.answer}>{currentFlashcard.answer}</Text>
         </View>
       )}
-      {/* <View style={styles.buttons}>
-        <Button
-          title={showAnswer ? "Hide Answer" : "Show Answer"}
-          onPress={handleToggleAnswer}
-        />
-      </View> */}
       {showPreviousButton && (
         <Button title="Previous Card" onPress={handlePreviousCard} />
       )}

@@ -11,6 +11,7 @@ const FlashcardSetList = () => {
       {FlashcardSets.map((setId) => (
         <View style={styles.boxButton} key={setId}>
           <Text
+            style={styles.buttonText}
             onPress={() => {
               router.push({
                 pathname: "/(tabs)/vocab/flashcardSet",

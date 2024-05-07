@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
-
 import { Text, View } from "../../components/Themed";
 
 export default function Reader() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome!</Text>
+      <Text style={styles.title}>Your stories</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
