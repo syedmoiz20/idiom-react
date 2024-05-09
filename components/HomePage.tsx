@@ -8,8 +8,8 @@ export default function EditScreenInfo() {
   return (
     <View style={styles.homeContainer}>
       <HomePageButton text="vocab" path="/vocab" />
-      <HomePageButton text="grammar" path="/vocab" />
-      <HomePageButton text="story teller" path="/vocab" />
+      <HomePageButton text="grammar" path="/" />
+      <HomePageButton text="story teller" path="/reader" />
     </View>
   );
 }

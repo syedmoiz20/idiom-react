@@ -45,6 +45,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="reader"
+        options={{
+          title: "Reader",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="book-reader" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="vocab"
         options={{
           title: "Vocab",
@@ -52,11 +61,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="reader"
+        name="account"
         options={{
-          title: "Reader",
+          title: "Account",
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="book-reader" color={color} />
+            <TabBarIcon name="user-circle" color={color} />
           ),
         }}
       />

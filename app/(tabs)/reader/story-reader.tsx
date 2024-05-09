@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
 
 import { View } from "../../../components/Themed";
-import FlashcardQuiz from "../../../components/FlashcardQuiz";
+import Reader from "../../../components/Reader";
 import { useLocalSearchParams } from "expo-router";
 
 export default function flashcardSet() {
-  const { selectedSet } = useLocalSearchParams();
+  const { selectedStory } = useLocalSearchParams();
   return (
     <View style={styles.container}>
-      <FlashcardQuiz setId={selectedSet as string} />
+      <Reader storyId={selectedStory as string} />
     </View>
   );
 }
