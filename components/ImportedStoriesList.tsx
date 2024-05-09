@@ -1,35 +1,37 @@
-import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View } from "./Themed";
 import { router } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome5";
 
-const stories = ["sample"];
+const stories = ["sample", "sample2", "sample3"];
 
-export default function StoriesList() {
+export default function ImportedStoriesList() {
   const handleImportClick = () => {
     console.log("Import button clicked!");
   };
   return (
-    <ScrollView style={styles.container}>
-      {stories.map((storyId) => (
-        <View style={styles.boxButton} key={storyId}>
-          <Text
-            style={styles.buttonText}
-            onPress={() => {
-              router.push({
-                pathname: "/(tabs)/reader/story-reader",
-                params: { selectedStory: storyId },
-              });
-            }}
-          >
-            {storyId}
-          </Text>
-        </View>
-      ))}
+    <View style={styles.container}>
+      <View>
+        {stories.map((storyId) => (
+          <View style={styles.boxButton} key={storyId}>
+            <Text
+              style={styles.buttonText}
+              onPress={() => {
+                router.push({
+                  pathname: "/(tabs)/reader/story-reader",
+                  params: { selectedStory: storyId },
+                });
+              }}
+            >
+              {storyId}
+            </Text>
+          </View>
+        ))}{" "}
+      </View>
       <TouchableOpacity onPress={handleImportClick} style={styles.plusButton}>
         <FontAwesome name="plus" color={"white"} size={28} />
       </TouchableOpacity>
-    </ScrollView>
+    </View>
   );
 }
 

@@ -17,7 +17,7 @@ const Reader: React.FunctionComponent<{ storyId: string }> = ({ storyId }) => {
     هذا: "this",
     نص: "text",
     عربي: "Arabic",
-    مثالي: "perfect",
+    مثالي: "example",
   };
 
   const handleWordClick = (word: string) => {
