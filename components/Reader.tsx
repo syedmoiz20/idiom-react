@@ -14,9 +14,7 @@ const Reader: React.FunctionComponent<{ storyId: string }> = ({ storyId }) => {
     };
     getStory();
   }, []);
-  //   const storyText: string = storyTexts[storyId as keyof typeof storyTexts];
   const storyWords = storyText.split(" ");
-  // Replace this with your actual data source (e.g., API response)
   const lexicalInfo = {
     مرحبًا: "Hello",
     بك: "with you",
