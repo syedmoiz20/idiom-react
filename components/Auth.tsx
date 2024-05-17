@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, StyleSheet } from "react-native";
 import { View, Text } from "./Themed";
-import { supabase } from "./supabaseClient";
+import { supabase } from "../lib/supabaseClient";
 import { Button, Input } from "react-native-elements";
 import { Session } from "@supabase/supabase-js";
 

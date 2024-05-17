@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text } from "./Themed";
 import { TouchableOpacity, Modal, StyleSheet } from "react-native";
-import storyTexts from "../storyTexts.json";
+import { getStoryRDB } from "../lib/supabaseClient";
 
 const Reader: React.FunctionComponent<{ storyId: string }> = ({ storyId }) => {
-  const [selectedWord, setSelectedWord] = React.useState("");
-  const storyText: string = storyTexts[storyId as keyof typeof storyTexts];
+  const [selectedWord, setSelectedWord] = useState("");
+  const [storyText, setStoryText] = useState<string>("");
+  useEffect(() => {
+    const getStory = async () => {
+      const res = await getStoryRDB(storyId);
+      setStoryText(res);
+      console.log(`storyText: ${JSON.stringify(storyText)}`);
+    };
+    getStory();
+  }, []);
+  //   const storyText: string = storyTexts[storyId as keyof typeof storyTexts];
   const storyWords = storyText.split(" ");
   // Replace this with your actual data source (e.g., API response)
   const lexicalInfo = {

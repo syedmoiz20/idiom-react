@@ -4,7 +4,7 @@ import HomePage from "../../components/HomePage";
 import { Text, View } from "../../components/Themed";
 import "react-native-url-polyfill/auto";
 import { useState, useEffect } from "react";
-import { supabase } from "../../components/supabaseClient";
+import { supabase } from "../../lib/supabaseClient";
 import Auth from "../../components/Auth";
 import { Session } from "@supabase/supabase-js";
 

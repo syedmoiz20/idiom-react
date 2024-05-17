@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text } from "./Themed";
 import { StyleSheet } from "react-native";
 
 const FlashcardSets = ["quiz1", "animals"];
