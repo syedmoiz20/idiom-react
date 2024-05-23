@@ -10,7 +10,6 @@ const Reader: React.FunctionComponent<{ storyId: string }> = ({ storyId }) => {
     const getStory = async () => {
       const res = await getStoryRDB(storyId);
       setStoryText(res);
-      console.log(`storyText: ${JSON.stringify(storyText)}`);
     };
     getStory();
   }, []);
@@ -34,8 +33,8 @@ const Reader: React.FunctionComponent<{ storyId: string }> = ({ storyId }) => {
   return (
     <View style={styles.container}>
       <View style={styles.arabicText}>
-        {storyWords.map((word) => (
-          <TouchableOpacity key={word} onPress={() => handleWordClick(word)}>
+        {storyWords.map((word, idx) => (
+          <TouchableOpacity key={idx} onPress={() => handleWordClick(word)}>
             <Text style={styles.arabicWord}>{word} </Text>
           </TouchableOpacity>
         ))}

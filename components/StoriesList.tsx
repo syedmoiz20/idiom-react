@@ -1,5 +1,4 @@
 import {
-  Button,
   Modal,
   ScrollView,
   StyleSheet,
@@ -22,14 +21,12 @@ export default function StoriesList() {
     getStories();
   }, []);
   const handleImportClick = () => {
-    console.log("Import button clicked!");
     setFormIsVisible(true);
   };
   const [formIsVisible, setFormIsVisible] = useState(false);
   const [importStoryText, setImportStoryText] = useState("");
   const [importStoryTitle, setImportStoryTitle] = useState("");
   const handleSubmit = () => {
-    console.log("Submitted:", { importStoryText, importStoryTitle });
     const saveToDB = async () => {
       await uploadStoryRDB(importStoryText, importStoryTitle, false);
     };
@@ -128,11 +125,13 @@ const styles = StyleSheet.create({
     height: "auto",
     fontSize: 15,
     fontWeight: "bold",
+    color: "gray",
   },
   storyTextInput: {
     fontSize: 15,
     fontWeight: "bold",
     height: "70%",
+    color: "gray",
   },
 
   boxControlButton: {

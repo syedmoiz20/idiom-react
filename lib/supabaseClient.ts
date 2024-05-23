@@ -2,14 +2,12 @@ import { AppState } from "react-native";
 import "react-native-url-polyfill/auto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createClient } from "@supabase/supabase-js";
-import dotenv from "dotenv";
-dotenv.config();
 
-const supabaseUrl = process.env.SUPABASE_URL as string;
-const supabaseAnonKey = process.env.SUPABSE_ANON_KEY as string;
+const supabaseUrl = "https://nspmbhsngphumvuueknv.supabase.co";
+const supabaseKey = process.env.SUPABASE_KEY as string;
 const storiesBucket = process.env.STORIES_BUCKET as string;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(supabaseUrl, supabaseKey, {
   auth: {
     storage: AsyncStorage,
     autoRefreshToken: true,
@@ -46,8 +44,8 @@ export async function uploadStoryRDB(
   const uid = (await supabase.auth.getUser()).data.user?.id as string;
   const { error } = await supabase.from(storiesBucket).insert([
     {
-      story_title: text,
-      story_text: title,
+      story_title: title,
+      story_text: text,
       generated: generated,
       user_id: uid,
     },
